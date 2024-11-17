@@ -115,3 +115,92 @@ button.operator:hover {
 #paren1:hover{
     background-color: #0362a299;
 }
+
+
+/*ESTILOS PARA EL ARBOL*/
+.tree-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#tree {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    position: relative;
+}
+
+.node {
+    display: inline-block;
+    text-align: center;
+    margin: 10px;
+    padding: 10px 15px;
+    color: #ccc;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    position: relative;
+}
+
+.children {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    position: relative;
+}
+
+.node .operator {
+    font-weight: bold;
+    color: #582323;
+}
+
+.node .children:before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 20px;
+    background-color: #333;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -10px;
+}
+
+.lineLeft {
+    position: absolute;
+    margin-bottom: -10%;
+    margin-right: 20%;
+    height: 2px;
+    background-color: #ccc;
+    width: 30%;
+    top: 0;
+    left: 60%;
+}
+
+.child {
+    position: relative;
+}
+
+.child .line {
+    width: 30px;
+    height: 2px;
+    background-color: #ccc;
+    position: absolute;
+    top: -10px;
+    left: 50%; 
+    transform: translateX(50%);
+    transform-origin: left center;
+}
+
+.lineRight{
+    position: absolute;
+    margin-bottom: -10%;
+    margin-right: 20%;
+    height: 2px;
+    background-color: #ccc;
+    width: 30%;
+    top: 0;
+}

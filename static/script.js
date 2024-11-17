@@ -48,16 +48,27 @@ function showTree() {
 }
 
 function generateTreeHTML(node) {
+    // Si el nodo es un número o un string (hoja del árbol)
     if (typeof node === 'number' || typeof node === 'string') {
         return `<div class="node">${node}</div>`;
     }
+
+    // Desestructuramos el nodo en operador, hijo izquierdo y derecho
     const [operator, left, right] = node;
+
+    // Generamos el HTML del operador con los hijos
     return `
         <div class="node">
             <div class="operator">${operator}</div>
             <div class="children">
-                ${generateTreeHTML(left)}
-                ${generateTreeHTML(right)}
+                <div class="child left">
+                    ${generateTreeHTML(left)}
+                    <div class="lineLeft" style="transform: rotate(-45deg);"></div>
+                </div>
+                <div class="child right">
+                    ${generateTreeHTML(right)}
+                    <div class="lineRight" style="transform: rotate(45deg);"></div>
+                </div>
             </div>
         </div>
     `;
